@@ -14,6 +14,12 @@ using namespace std;
 
 typedef unsigned int TELEM;
 
+enum Exeptions {
+    tooLargeIndex,
+    negativeIndex,
+    negativeSize
+};
+
 class TBitField
 {
 private:
