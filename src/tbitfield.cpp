@@ -11,13 +11,11 @@
 static const int FAKE_INT = -1;
 static TBitField FAKE_BITFIELD(1);
 
-#define BIT_TELEM_SIZE sizeof(TELEM) * 8
-
 TBitField::TBitField(int len)
 {
     if (len < 0) throw negativeSize;
     BitLen = len;
-    MemLen = (BitLen + BIT_TELEM_SIZE - 1) >> (int)log2(BIT_TELEM_SIZE); // логарифм в поле или конст надо (constexpr)
+    MemLen = (BitLen + BIT_TELEM_SIZE - 1) >> deg2; // логарифм в поле или конст надо (constexpr)
     pMem = new TELEM[MemLen];
     for (size_t i = 0; i < MemLen; i++) pMem[i] = 0; // memset
 }
@@ -38,13 +36,13 @@ TBitField::~TBitField()
 
 int TBitField::GetMemIndex(const int n) const // индекс Мем для бита n
 {
-    return (n >> (int)log2(BIT_TELEM_SIZE));
+    return (n >> deg2);
 }
 
 TELEM TBitField::GetMemMask(const int n) const // битовая маска для бита n
 {
     TELEM res = 1;
-    int shift = n & ((1 << (int)log2(BIT_TELEM_SIZE)) - 1);
+    int shift = n & ((1 << deg2) - 1);
     return res << shift;
 }
 
@@ -131,7 +129,7 @@ TBitField TBitField::operator~(void) // отрицание
     TBitField* res = new TBitField(*this);
     for (size_t i = 0; i < res->MemLen; i++)
         res->pMem[i] = ~(res->pMem[i]);
-    int rest = res->BitLen & ((1 << (int)log2(BIT_TELEM_SIZE)) - 1);
+    int rest = res->BitLen & ((1 << deg2) - 1);
     res->pMem[res->MemLen - 1] &= ((1 << rest) - 1);
     return *res;
 }

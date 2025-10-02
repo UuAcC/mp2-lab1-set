@@ -11,7 +11,6 @@
 #include <iostream>
 
 using namespace std;
-
 typedef unsigned int TELEM;
 
 enum Exeptions {
@@ -19,6 +18,7 @@ enum Exeptions {
     negativeIndex,
     negativeSize
 };
+#define BIT_TELEM_SIZE sizeof(TELEM) * 8
 
 class TBitField
 {
@@ -26,6 +26,12 @@ private:
   int  BitLen; // длина битового поля - макс. к-во битов
   TELEM *pMem; // память для представления битового поля
   int  MemLen; // к-во эл-тов Мем для представления бит.поля
+
+  // логарифм использовать не получилось, увы
+  static constexpr int deg2 =
+      sizeof(TELEM) == 1 ? 3 :
+      sizeof(TELEM) == 2 ? 4 : 
+      sizeof(TELEM) == 4 ? 5 : 6;
 
   // методы реализации
   int   GetMemIndex(const int n) const; // индекс в pМем для бита n       (#О2)
