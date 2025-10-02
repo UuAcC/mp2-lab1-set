@@ -15,9 +15,9 @@ TBitField::TBitField(int len)
 {
     if (len < 0) throw negativeSize;
     BitLen = len;
-    MemLen = (BitLen + BIT_TELEM_SIZE - 1) >> deg2; // логарифм в поле или конст надо (constexpr)
+    MemLen = (BitLen + BIT_TELEM_SIZE - 1) >> deg2; 
     pMem = new TELEM[MemLen];
-    for (size_t i = 0; i < MemLen; i++) pMem[i] = 0; // memset
+    memset(pMem, 0, TELEMsize * MemLen);
 }
 
 TBitField::TBitField(const TBitField &bf) // конструктор копирования
@@ -25,8 +25,7 @@ TBitField::TBitField(const TBitField &bf) // конструктор копиро
     BitLen = bf.BitLen;
     MemLen = bf.MemLen;
     pMem = new TELEM[MemLen];
-    for (size_t i = 0; i < MemLen; i++) //memcpy
-        pMem[i] = bf.pMem[i];
+    memcpy(pMem, bf.pMem, TELEMsize * MemLen);
 }
 
 TBitField::~TBitField()
@@ -83,8 +82,7 @@ TBitField& TBitField::operator=(const TBitField &bf) // присваивание
     BitLen = bf.BitLen;
     MemLen = bf.MemLen;
     pMem = new TELEM[MemLen];
-    for (size_t i = 0; i < MemLen; i++)
-        pMem[i] = bf.pMem[i];
+    memcpy(pMem, bf.pMem, TELEMsize * MemLen);
     return *this;
 }
 

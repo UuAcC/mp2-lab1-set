@@ -32,6 +32,7 @@ private:
       sizeof(TELEM) == 1 ? 3 :
       sizeof(TELEM) == 2 ? 4 : 
       sizeof(TELEM) == 4 ? 5 : 6;
+  static constexpr int TELEMsize = sizeof(TELEM);
 
   // методы реализации
   int   GetMemIndex(const int n) const; // индекс в pМем для бита n       (#О2)
