@@ -112,6 +112,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{9C65E872-FF7E-3F09-8AAC-24055CC7F609}</Project>
       <Name>gtest</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\Maxim\source\repos\practice\SECOND_COURSE\18.09.2025\mp2-lab1-set\build\sample_lights\sample_lights.vcxproj">
+      <Project>{1E1719D8-6F9B-3B4A-AD80-B654B26236F5}</Project>
+      <Name>sample_lights</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\Users\Maxim\source\repos\practice\SECOND_COURSE\18.09.2025\mp2-lab1-set\build\samples\sample_prime_numbers.vcxproj">
       <Project>{7A16F108-4259-3349-8B18-D5833429C972}</Project>
       <Name>sample_prime_numbers</Name>

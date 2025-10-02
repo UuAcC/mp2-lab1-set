@@ -2,5 +2,6 @@ C:/Users/Maxim/source/repos/practice/SECOND_COURSE/18.09.2025/mp2-lab1-set/build
 C:/Users/Maxim/source/repos/practice/SECOND_COURSE/18.09.2025/mp2-lab1-set/build/CMakeFiles/ZERO_CHECK.dir
 C:/Users/Maxim/source/repos/practice/SECOND_COURSE/18.09.2025/mp2-lab1-set/build/src/CMakeFiles/set.dir
 C:/Users/Maxim/source/repos/practice/SECOND_COURSE/18.09.2025/mp2-lab1-set/build/samples/CMakeFiles/sample_prime_numbers.dir
+C:/Users/Maxim/source/repos/practice/SECOND_COURSE/18.09.2025/mp2-lab1-set/build/sample_lights/CMakeFiles/sample_lights.dir
 C:/Users/Maxim/source/repos/practice/SECOND_COURSE/18.09.2025/mp2-lab1-set/build/gtest/CMakeFiles/gtest.dir
 C:/Users/Maxim/source/repos/practice/SECOND_COURSE/18.09.2025/mp2-lab1-set/build/test/CMakeFiles/test_set.dir

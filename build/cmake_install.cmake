@@ -36,6 +36,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("C:/Users/Maxim/source/repos/practice/SECOND_COURSE/18.09.2025/mp2-lab1-set/build/src/cmake_install.cmake")
   include("C:/Users/Maxim/source/repos/practice/SECOND_COURSE/18.09.2025/mp2-lab1-set/build/samples/cmake_install.cmake")
+  include("C:/Users/Maxim/source/repos/practice/SECOND_COURSE/18.09.2025/mp2-lab1-set/build/sample_lights/cmake_install.cmake")
   include("C:/Users/Maxim/source/repos/practice/SECOND_COURSE/18.09.2025/mp2-lab1-set/build/gtest/cmake_install.cmake")
   include("C:/Users/Maxim/source/repos/practice/SECOND_COURSE/18.09.2025/mp2-lab1-set/build/test/cmake_install.cmake")
 
