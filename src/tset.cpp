@@ -12,7 +12,7 @@ static const int FAKE_INT = -1;
 static TBitField FAKE_BITFIELD(1);
 static TSet FAKE_SET(1);
 
-TSet::TSet(int mp) : BitField(0)
+TSet::TSet(int mp) : BitField(1)
 {
     if (mp < 0) throw negativeSize;
     this->MaxPower = mp;
@@ -20,14 +20,14 @@ TSet::TSet(int mp) : BitField(0)
 }
 
 // конструктор копирования
-TSet::TSet(const TSet& s) : BitField(0)
+TSet::TSet(const TSet& s) : BitField(1)
 {
     this->MaxPower = s.MaxPower;
     this->BitField = s.BitField;
 }
 
 // конструктор преобразования типа
-TSet::TSet(const TBitField& bf) : BitField(0)
+TSet::TSet(const TBitField& bf) : BitField(1)
 {
     this->MaxPower = bf.GetLength();
     this->BitField = bf;
